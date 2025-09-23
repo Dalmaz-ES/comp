@@ -607,7 +607,175 @@ while num < 1 or num > 10:
 print(f"Your number is {num}")
 """""
 
-#INTEREST CALCULATOR
+#INTEREST CALCULATOR WITH WHILE LOOPS
 #1:59:45
 
-#new file test 
+"""""
+principle = 0
+rate = 0
+time = 0
+
+while principle <= 0:
+    principle = float(input("Enter the principal amount: "))
+    if principle <= 0:
+        print("Principal amount must be greater than 0")
+print(principle)
+
+while rate <= 0:
+    rate = float(input("Enter the interest rate: "))
+    if rate <= 0:
+        print("rate must be greater than 0")
+print(rate)
+
+while time <= 0:
+    time = int(input("Enter the time in years: "))
+    if time <= 0:
+        print("time must be greater than 0")
+
+print(time)
+print(f"Your interest rate is: {rate:.2f}%")
+print(time) 
+
+interest = principle * pow((1 + rate / 100), time)
+
+total_amount = principle + interest
+
+print(f"The interest is: ${interest}")
+print(f"The total amount after {time} years is: ${total_amount:.2f}")
+
+"""""
+
+"""""
+principle = 0
+rate = 0
+time = 0
+
+while True: # Now its able to enter "0" 
+    principle = float(input("Enter the principal amount: "))
+    if principle < 0:
+        print("Principal amount must be greater than 0")
+    else:
+        break
+
+while True:
+    rate = float(input("Enter the interest rate: "))
+    if rate < 0:
+        print("rate must be greater than 0")
+    else:
+        break
+
+while True:
+    time = int(input("Enter the time in years: "))
+    if time < 0:
+        print("time must be greater than 0")
+    else:
+        break
+
+print(time)
+print(f"Your interest rate is: {rate:.2f}%")
+print(time) 
+
+interest = principle * pow((1 + rate / 100), time)
+
+total_amount = principle + interest
+
+print(f"The interest is: ${interest}")
+print(f"The total amount after {time} years is: ${total_amount:.2f}")
+"""""
+
+#FOR LOOPS, used to iterate over a sequence (list, tuple, string) or other iterable objects
+
+"""""
+for  x in range (1, 11):
+    print(x)
+"""""
+
+"""""
+for  x in reversed(range (1, 11)):
+    print(x)
+
+print("Happy New Year!")
+"""""
+
+"""""
+credit_number  = "1234-5678-9012-3456" # iterate over each character in the string
+
+for x in credit_number: # step of 2, counts by 2s
+    print(x)
+"""""
+
+"""""
+for x in range(1, 21): # iterate from 1 to 20
+    if x == 13: 
+        continue # skip the number 13, if changed by break it stops the loop at 13
+
+    else:
+        print(x)
+"""""
+
+#COUNTDOWN TIMER 
+
+"""""
+import time
+
+my_time = int(input("Enter the time in seconds: ")) 
+
+for x in range (0, my_time): # counts up from 0 to my_time
+    print(x)
+    time.sleep(1) # waits for 1 second 
+
+
+print("times up!")
+"""""
+
+"""""
+
+import time
+
+my_time = int(input("Enter the time in seconds: ")) 
+
+for x in reversed(range (0, my_time)): # counts down from my_time to 0 
+    print(x)
+    time.sleep(1) 
+
+print("times up!")
+"""""
+
+"""""
+import time
+
+my_time = int(input("Enter the time in seconds: ")) 
+
+for x in range (my_time, 0, -1): # counts down from my_time to 0
+    
+    seconds  = x  % 60
+    minutes = int(x / 60) % 60
+    hours = int(minutes / 60) % 60
+    print(f"{hours:02}:{minutes:02}:{seconds:02}") # :02 = adds a leading zero if seconds is less than 10
+    time.sleep(1) 
+
+print("times up!")
+
+"""""
+
+"""""
+#NESTED LOOPS, a loop inside a loop
+
+rows = int(input("Enter the number of rows: "))
+columns = int(input("Enter the number of columns: "))
+symbol = input("Enter a symbol to use: ")
+
+for x in range(rows):
+
+    for y in range(columns): 
+        print(symbol, end="") # end="" prevents new line after each symbol
+    print()
+
+"""""
+
+#COLLECTIONS, data structures that can hold more than one value (list[], tuple(), set{}, dictionary)
+
+#2:23:41
+
+
+
