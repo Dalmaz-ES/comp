@@ -32,6 +32,8 @@ from dataclasses import replace
 from http.cookiejar import uppercase_escaped_char
 from selectors import SelectSelector
 
+from numpy.f2py.rules import options
+
 """""
 #TYPECASTING, process of converting a variable from one data type to another str(), int(), float(), bool() 
 
@@ -860,4 +862,105 @@ print()
 print(f"Your total is: ${total}")
 """
 #02:45:08
+
+#2D LISTS
+
+"""
+
+fruits = ["apple", "orange", "banana", "coconut"]
+vegetables = ["celery", "carrots", "potatoes"]
+meats = ["chicken", "fish", "turkey"]
+
+groceries = [fruits, vegetables, meats]
+
+#print(groceries[2][0]) # prints the first item in the third list
+
+for x in groceries: # iterates over each list in the groceries list
+    for y in x: # iterates over each item in the list
+        print(y, end=" ") # end=" " prevents new line after each item
+    print() # prints a new line after each list
+
+"""
+
+"""
+#MAKING A NUMPAD
+
+first_row = (1, 2, 3)
+second_row = (4, 5, 6)
+third_row = (7, 8, 9)
+fourth_row = ("*", 0, "#")
+
+numpad = (first_row, second_row, third_row, fourth_row)
+for x in numpad:
+    for y in x:
+        print(y, end=" ")
+    print()
+"""
+
+
+#PYTHON QUIZ GAME
+
+"""
+questions = ("WHATS MY NAME?: ",
+             "WHATS MY AGE?: ",
+             "WHATS M Y HEIGHT?: ",
+             "WHATS MY COUNTRY?: ")
+
+options = (("A.John", "B.Sinay", "C.Doe", "D.Smith"),
+           ("A.22", "B.23", "C.24", "D.25"),
+           ("A.5.7", "B.5.8", "C.5.9", "D.6.0"),
+           ("A.USA", "B.Canada", "C.UK", "D.Australia"))
+
+answers = ("B", "B", "C", "A")
+
+guesses = []
+
+score = 0
+question_num = 0
+
+
+for x in questions:
+    print("-------------------------")
+    print(x)
+
+    for y in options[question_num]:
+        print(y)
+
+
+    guess = input("Enter (A, B, C, D): ").upper()
+    guesses.append(guess) # adds the guess to the guesses list
+    if guess == answers[question_num]:
+        score += 1
+        print("CORRECT!")
+
+    else:
+        print("WRONG!")
+        print(f"{answers[question_num]}. is the correct answer")
+    question_num += 1
+
+print("-------------------------")
+print("RESULTS")
+print("-------------------------")
+
+print("answers: ", end="")
+for x in answers:
+    print(x, end=" ")
+print()
+
+print("guesses: ", end="")
+for x in guesses:
+    print(x, end=" ")
+print()
+
+score = int(score / len(questions) * 100)
+print(f"Your score is: {score}%")
+
+if score >= 50:
+    print("You passed the quiz")
+else:
+    print("You failed the quiz")
+
+"""
+
+#03:03:30
 
