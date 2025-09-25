@@ -29,6 +29,7 @@ else:
 
 """""
 from dataclasses import replace
+from http.cookiejar import uppercase_escaped_char
 from selectors import SelectSelector
 
 """""
@@ -773,23 +774,90 @@ for x in range(rows):
 
 """""
 
-#COLLECTIONS, data structures that can hold more than one value (list[], tuple(), set{}, dictionary)
+#COLLECTIONS, data structures that can hold more than one value (list[ordered and changeable, dup ok], tuple(ordered and unchangeable, dup ok), set{unordered and immutable,add/rem ok but no dup}, dictionary)
 
 #2:23:41
 
-#sinay
-#sinay 2
+#Lists []
 
-a = 3
-print(a)
+"""""
+fruits = ["apple", "orange", "banana", "coconut"]
 
-b = 2
-print(b)
+#print("lime" in fruits) # checks if "lime" is in the list  and returns True or False
+#print(len(fruits))
+#print(dir(fruits))
+#print(help(fruits))
+#print(fruits[::-1])
+#for fruit in fruits:
+    #print(fruit)
 
-#sinay test
+#fruits[0] = "pineapple" # changes the first item in the list
+#fruits.append("pineapple") # adds "pineapple" to the end of the list
+#fruits.remove("coconut") # removes "coconut" from the list
+#fruits.insert(1 ,"grape") # inserts "grape" at index 1
+#fruits.sort() # sorts the list in ascending order alphabetichal
+#fruits.reverse() # reverses the list
+#fruits.clear() # removes all items from the list
+#fruits.count("apple") # counts how many times "apple" appears in the list
 
-#sinay test other
-#son test
 
+print(fruits)
+#print(fruits.index("coconut")) # returns the index of "coconut" in the list
 
+#for fruit in fruits:
+#    print(fruit)
+"""""
+
+"""
+
+#TUPLES
+#Set {}
+#no indexing, no duplicates, no ordering
+
+fruits = {"apple", "orange", "banana", "coconut"}
+#fruits.add("pineapple")
+#fruits.remove("coconut")
+
+#print(fruits)
+"""
+
+"""
+#Tuple()
+#faster than lists, ordered, unchangeable, allows duplicates
+
+fruits = ("apple", "orange", "banana", "coconut")
+#print(dir(fruits))
+
+#print(fruits.index("banana")) # returns the index of "banana" in the tuple
+#print(fruits.count("apple")) # counts how many times "apple" appears in the tuple
+
+"""
+
+"""
+#SHOPPING CART PROGRAM
+
+foods = []
+prices = []
+total = 0
+
+while True:
+    food = input("Enter a food (q to exit): ")
+    if food.lower() == "q":
+        break
+    else:
+        price = float(input(f"Enter the price of {food}: $"))
+        foods.append(food) # adds the food to the list
+        prices.append(price) # adds the price to the list
+
+print("-----YOUR CART----")
+for food in foods:
+    print(food, end=" ")
+
+for price in prices:
+    total += price
+
+print()
+print(f"Your total is: ${total}")
+"""
+#02:45:08
 
