@@ -13,3 +13,4 @@ print()
 
 #10/05/2025 continue on dict
 #test devam
+#ekstra deneme
