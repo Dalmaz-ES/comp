@@ -27,3 +27,4 @@ for item in cart:
 print(f"\nTotal: ${total:.2f}")
 
 
+
