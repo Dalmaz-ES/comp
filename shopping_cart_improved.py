@@ -25,3 +25,5 @@ for item in cart:
     print(f"{item['food']} x{item['quantity']} = ${subtotal:.2f}")
 
 print(f"\nTotal: ${total:.2f}")
+
+
