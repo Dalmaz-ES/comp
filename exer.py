@@ -119,7 +119,7 @@ apple = 10
 #apple **= 3
 #apple *= 2
 #apple /= 5
-#apple += 10
+#apple += 10 same as apple = apple + 10
 #apple -= 5 # apple = apple - 5 [same things]
  
 remainder = apple % 3 # returns the remainder of the division of apple by 3
@@ -519,7 +519,7 @@ print(only_numbers)
 
 """""
 
-#FORMAT SPECIFIERS = {VALUE:FLAGS} format a valur based on what flags are inserted
+#FORMAT SPECIFIERS = {VALUE:FLAGS} format a value based on what flags are inserted
 
 price1 = 3000.12356
 price2 = -1075.99
@@ -635,7 +635,7 @@ while time <= 0:
     if time <= 0:
         print("time must be greater than 0")
 
-print(time)
+print(principle)
 print(f"Your interest rate is: {rate:.2f}%")
 print(time) 
 
@@ -648,6 +648,8 @@ print(f"The total amount after {time} years is: ${total_amount:.2f}")
 
 """""
 
+
+#!!!!! IMPORTANT !!!!!
 """""
 principle = 0
 rate = 0
@@ -687,14 +689,13 @@ print(f"The total amount after {time} years is: ${total_amount:.2f}")
 """""
 
 #FOR LOOPS, used to iterate over a sequence (list, tuple, string) or other iterable objects
-
 """""
 for  x in range (1, 11):
     print(x)
 """""
 
 """""
-for  x in reversed(range (1, 11)):
+for  x in reversed(range(1, 11)):
     print(x)
 
 print("Happy New Year!")
@@ -716,8 +717,7 @@ for x in range(1, 21): # iterate from 1 to 20
         print(x)
 """""
 
-#COUNTDOWN TIMER 
-
+#COUNTDOWN TIMER
 """""
 import time
 
@@ -753,7 +753,7 @@ for x in range (my_time, 0, -1): # counts down from my_time to 0
     
     seconds  = x  % 60
     minutes = int(x / 60) % 60
-    hours = int(minutes / 60) % 60
+    hours = int(minutes / 60) % 60 # or minutes / 3600
     print(f"{hours:02}:{minutes:02}:{seconds:02}") # :02 = adds a leading zero if seconds is less than 10
     time.sleep(1) 
 
@@ -761,9 +761,15 @@ print("times up!")
 
 """""
 
-"""""
 #NESTED LOOPS, a loop inside a loop
+"""""
+for x in range(3):
+    for y in range(1, 10):
+        print(y, end="")
+    print()
+"""""
 
+"""""
 rows = int(input("Enter the number of rows: "))
 columns = int(input("Enter the number of columns: "))
 symbol = input("Enter a symbol to use: ")
@@ -777,12 +783,18 @@ for x in range(rows):
 """""
 
 #COLLECTIONS, data structures that can hold more than one value (list[ordered and changeable, dup ok], tuple(ordered and unchangeable, dup ok), set{unordered and immutable,add/rem ok but no dup}, dictionary)
+#list[ordered and changeable, dup ok]
+#tuple(ordered and unchangeable, dup ok) faster then list
+#set{unordered and immutable,add/rem ok but no dup}
+#dict
 
 #2:23:41
 
 #Lists []
-
 """""
+#print(dir(fruits)) 
+#print(help(fruits)) List all attributes and describes
+
 fruits = ["apple", "orange", "banana", "coconut"]
 
 #print("lime" in fruits) # checks if "lime" is in the list  and returns True or False
@@ -810,21 +822,23 @@ print(fruits)
 #    print(fruit)
 """""
 
-"""
 
-#TUPLES
+
+
 #Set {}
+"""
 #no indexing, no duplicates, no ordering
 
 fruits = {"apple", "orange", "banana", "coconut"}
 #fruits.add("pineapple")
 #fruits.remove("coconut")
-
+#fruits.pop()
 #print(fruits)
 """
 
-"""
+
 #Tuple()
+"""
 #faster than lists, ordered, unchangeable, allows duplicates
 
 fruits = ("apple", "orange", "banana", "coconut")
